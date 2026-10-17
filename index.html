@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApexTech Store | Modern Hardware & Electronics</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <h1 class="logo"><i class="fa-solid fa-microchip"></i> ApexTech</h1>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search gadgets, accessories...">
+        <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+      <div class="cart-icon-wrapper" id="cartToggle">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-badge" id="cartCount">0</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-layout">
+    <!-- Category Sidebar -->
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      <ul class="category-list">
+        <li><button class="cat-btn active" data-category="all">All Products</button></li>
+        <li><button class="cat-btn" data-category="Audio">Audio</button></li>
+        <li><button class="cat-btn" data-category="Accessories">Accessories</button></li>
+        <li><button class="cat-btn" data-category="Smart Devices">Smart Devices</button></li>
+      </ul>
+    </aside>
+
+    <!-- Product Catalog Section -->
+    <section class="products-section">
+      <div class="catalog-header">
+        <h2>Available Products</h2>
+        <span id="productSummary">Showing all items</span>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+  </main>
+
+  <!-- Slide-out Cart Sidebar -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Shopping Cart</h3>
+      <button class="close-btn" id="closeCart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItemsContainer">
+      <p class="empty-msg">Your cart is currently empty.</p>
+    </div>
+    <div class="cart-footer">
+      <div class="price-row">
+        <span>Subtotal:</span>
+        <span id="subtotalAmount">₹0.00</span>
+      </div>
+      <div class="price-row tax-row">
+        <span>GST (18%):</span>
+        <span id="taxAmount">₹0.00</span>
+      </div>
+      <div class="price-row total-row">
+        <span>Final Total:</span>
+        <strong id="finalTotal">₹0.00</strong>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- Checkout Modal with Client-Side Validation -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Order Checkout</h3>
+        <button class="close-btn" id="closeModal">&times;</button>
+      </div>
+      <form id="checkoutForm" novalidate>
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" placeholder="e.g. Nitin Kumar">
+          <small class="error-text" id="nameError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="e.g. nitin@example.com">
+          <small class="error-text" id="emailError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number (10 Digits)</label>
+          <input type="tel" id="phone" placeholder="e.g. 9876543210">
+          <small class="error-text" id="phoneError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Shipping Address</label>
+          <textarea id="address" rows="2" placeholder="Street, City, Pin Code"></textarea>
+          <small class="error-text" id="addressError"></small>
+        </div>
+
+        <div class="modal-summary">
+          <span>Payable Amount: <strong id="modalPayable">₹0.00</strong></span>
+        </div>
+
+        <button type="submit" class="submit-order-btn">Confirm Order</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
