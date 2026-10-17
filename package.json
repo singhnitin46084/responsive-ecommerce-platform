@@ -1,0 +1,17 @@
+{
+  "name": "responsive-ecommerce-platform",
+  "version": "1.0.0",
+  "description": "Vanilla JavaScript and Responsive E-Commerce Web Application",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": [
+    "ecommerce",
+    "javascript",
+    "dom-manipulation",
+    "responsive-design"
+  ],
+  "author": "Nitin Kumar",
+  "license": "MIT"
+}
